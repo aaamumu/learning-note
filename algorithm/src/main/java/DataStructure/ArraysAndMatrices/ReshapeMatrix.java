@@ -17,8 +17,19 @@ package DataStructure.ArraysAndMatrices;
 public class ReshapeMatrix {
 
 	public int[][] matrixReshape(int [][] nums , int r , int x){
-		if()
-		return null;
+		int hight = nums.length;
+		int wide = nums[0].length;
+		if(hight * wide != r * x)
+			return nums;
+		int [][] new_nums = new int[r][x];
+		int index = 0;
+		for(int i = 0;i < nums.length;i++) {
+			for(int j = 0;j < nums[i].length;j++) {
+				new_nums[index / r][index % r] = nums[i][j];
+				index++;
+			}
+		}
+		return new_nums;
 	}
 
 }
